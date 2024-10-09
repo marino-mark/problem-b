@@ -1,3 +1,5 @@
+const { default: test } = require("node:test");
+
 function isPalindrome(x) {
     // Check if the input is a valid integer
     if (typeof x !== 'number' || !Number.isInteger(x)) {
@@ -11,14 +13,16 @@ function isPalindrome(x) {
 
     // Reverse the integer
     let reversed = 0;
-    let original = x;
+    let isPalindrome = x;
 
     while (x > 0) {
         reversed = reversed * 10 + x % 10;
         x = Math.floor(x / 10);
     }
 
-    return reversed === original;
+    return reversed === isPalindrome;
 }
-
+module.exports={
+    test,
+};
 
